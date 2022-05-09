@@ -1,0 +1,134 @@
+body {
+  @include d-flex-col();
+  position: relative;
+  font: 400 16px/1 $f-main;
+  background-color: $bg-main;  
+  color: $c-main;
+  &.hide{
+    overflow: hidden;
+  }
+  }
+
+  main{
+    flex: 1; 
+  } 
+
+  section{
+    margin: 40px 0;
+    padding: 40px 0;
+    &.m-0{
+      margin: 0;
+      padding: 0;
+    }
+    .section{
+      &-title{
+        font: 600 3.125rem/1.125 $f-main;
+        color: $c-main;
+        text-align: center;
+        margin-bottom: 10px;
+      }
+      &-subtitle{
+          font: 400 1.5625rem/1.68 $f-main;
+          color: $c-main;
+          text-align: center;
+          opacity: 0.5;
+          margin-bottom: 40px;
+      }
+    }
+  }
+
+.container{
+    max-width: 1736px;
+    width: 100%;
+    margin: 0 auto;
+    &--sm{
+      max-width: 980px;
+    }
+    @media screen and (max-width: 1200px){
+      max-width: 90%;
+    }
+}
+
+  a{
+    color: $c-main;
+    &:hover{
+      cursor: pointer;
+      color: $c-main-button;
+    }
+  }
+
+.btn {
+    @include d-flex(center, center);
+    @include border-radius(sm);
+    font: 400 1.25rem/1.25  $f-main;
+    background: $c-main-button;
+    color: #FFFFFF;
+    padding: 20px 40px;
+    letter-spacing: 0.065em;
+    @media screen and (max-width: 1200px) {
+
+    }
+    @media screen and (max-width: 1024px) {
+      padding: 7px 10px;
+      min-width: 160px;
+    }
+  }
+
+// BANNER SECTION
+
+#home{
+  height: 100vh;
+  background-image: url('./../images/bg-main.jpg');
+	background-repeat: no-repeat;
+	background-size: cover;
+  margin: 0;
+}
+.main-banner{
+  @include d-flex();
+  padding-top: 100px;
+  
+  
+  &__text{
+    width: 50%;
+    position: relative;
+  }
+
+  &__image{
+    width: 50%;
+    position: relative;
+  }
+  &__title{
+    margin-bottom: 40px;
+  }
+  &__content{
+    max-width: 470px;
+    width: 100%;
+    margin-bottom: 33px;
+  }
+  @media screen and (max-width: 767px){
+    flex-direction: column;
+    padding-bottom: 0;
+  }
+}
+
+// marquee SECTION
+
+.marquee {
+  display: block;
+  width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  background: #5A4039;
+  transform: matrix(1, 0, 0, -1, 0, 0);
+  padding: 10px 0;
+  span {
+    display: inline-block;
+    text-transform: uppercase;
+    padding-left: 100%;
+    color: rgba(255, 245, 0, 0.6);
+    -webkit-animation: scroll 5s infinite linear;
+    -moz-animation: scroll 5s infinite linear;
+    animation: scroll 5s infinite linear;
+  }
+}
+

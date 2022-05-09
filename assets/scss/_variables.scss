@@ -1,0 +1,101 @@
+
+/* font */
+
+$f-main:        'Source Sans Pro', sans-serif;
+
+/* colors */
+
+$c-main:          #fff;
+$c-secondary:     #71768E;
+$c-text:          #A0A3B5;
+$c-yellow:        #FF9429;
+$c-blue:          #067CCB;
+$bg-main:         #101932;
+
+$c-main-button:   #E11D2E;
+
+
+
+/* mixins */
+
+@mixin d-flex($align-item: center, $justify-content: space-between) {
+    display: flex;
+    align-items: $align-item;
+    justify-content: $justify-content;
+}
+@mixin d-flex-col() {
+  display: flex;
+  flex-direction: column;
+}
+
+
+@mixin pseudo($display: block, $pos: absolute, $content: ''){
+   content: $content;
+   display: $display;
+   position: $pos;
+ }
+
+
+// xs = 10px
+// sm = 15px
+// md = 20px
+// lg =  30px
+// xl = 50px
+
+@mixin border-radius($radius: xs) {
+  @if $radius == xs {
+    border-radius: 10px;
+  } @else if $radius == sm {
+    border-radius: 15px;
+  } @else if $radius == md {
+    border-radius: 20px;
+  } @else if $radius == lg {
+    border-radius: 30px;
+  }@else if $radius == xl {
+    border-radius: 50px;
+  }@else {
+    border-radius: $radius;
+  }
+}
+
+@mixin position($position, $top: inherit, $right: inherit, $bottom: inherit, $left: inherit) {
+   position: $position;
+   top: $top;
+   right: $right;
+   bottom: $bottom;
+   left: $left;
+ }
+
+
+ // keyframe
+
+ @-webkit-keyframes scroll {
+  0% {
+      -webkit-transform: translate(0, 0);
+      transform: translate(0, 0);
+  }
+  100% {
+      -webkit-transform: translate(-100%, 0);
+      transform: translate(-100%, 0)
+  }
+}
+
+@-moz-keyframes scroll {
+  0% {
+      -moz-transform: translate(0, 0);
+      transform: translate(0, 0);
+  }
+  100% {
+      -moz-transform: translate(-100%, 0);
+      transform: translate(-100%, 0)
+  }
+}
+
+@keyframes scroll {
+  0% {
+      transform: translate(0, 0);
+  }
+  100% {
+      transform: translate(-100%, 0)
+  }
+}

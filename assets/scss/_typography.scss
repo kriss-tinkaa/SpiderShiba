@@ -1,0 +1,25 @@
+$f13: 0.8125rem;
+$f15: 0.9375rem;
+$f16: 1rem/1.6;
+$f17: 1.0625rem;
+$f20: 1.25rem;
+$f25: 1.5625rem;
+$f30: 1.875rem;
+$f32: 2rem;
+$f35: 2.1875rem;
+$f50: 3.125rem;
+$f80: 5rem;
+
+
+h1{
+    font: 600 5rem/1.125 $f-main;
+    span{
+        font: 600 5rem/1.125 $f-main;
+        color: $c-main-button;
+    }
+}
+
+p,div,span{
+    font: 400 1rem/1.6  $f-main;
+}
+
