@@ -6,6 +6,14 @@ $(document).ready(function () {
         $('.header').toggleClass("active");
     });
 
+    $(window).on("scroll", function() {
+        if($(window).scrollTop() > 50) {
+            $("header").addClass("scroll");
+        } else {
+           $("header").removeClass("scroll");
+        }
+    });
+
     $('.slider').slick({
         dots: true,
         infinite: false,

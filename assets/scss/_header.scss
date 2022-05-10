@@ -97,6 +97,26 @@ header{
     }
     &.active{
         background-color: transparent;
+        span{
+            &:nth-child(1){
+                position: absolute;
+                background-color: white;
+                 transform:rotate(45deg);
+                -ms-transform:rotate(45deg);
+                -webkit-transform:rotate(45deg); 
+            }
+            &:nth-child(2){
+                display: none;
+            }
+            &:nth-child(3){
+                display: block;
+                position: absolute;
+                background-color: white;
+                transform:rotate(-45deg);
+                -ms-transform:rotate(-45deg); 
+                -webkit-transform:rotate(-45deg);
+            }
+        }
     }
     @media screen and (max-width: 1600px){
         display: flex;
