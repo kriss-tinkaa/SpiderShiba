@@ -44,8 +44,11 @@ body {
     &--sm{
       max-width: 980px;
     }
-    @media screen and (max-width: 1200px){
-      max-width: 90%;
+    @media screen and (max-width: 1750px){
+      max-width: calc(100% - 80px);
+    }
+    @media screen and (max-width: 767px){
+      max-width: calc(100% - 30px);
     }
 }
 
@@ -59,12 +62,30 @@ body {
 
 .btn {
     @include d-flex(center, center);
-    @include border-radius(sm);
-    font: 400 1.25rem/1.25  $f-main;
-    background: $c-main-button;
+    @include border-radius(xs);
+    font: 700 1.25rem/1.25  $f-main;
+    border: 1px solid transparent;
+    padding: 25px 45px;
     color: #FFFFFF;
-    padding: 20px 40px;
-    letter-spacing: 0.065em;
+    &:hover{
+      cursor: pointer;
+      border-color: #FFFFFF;
+      background: rgba(255, 255, 255, 0.05);
+    }
+    &--main{
+      background: $c-main-button;
+    }
+    &--transparent{
+      background: rgba(255, 255, 255, 0.05);
+      &:hover{
+        border-color: #FFFFFF;
+      }
+    }
+    &--header{
+      background: #AC1216;
+      padding: 11px 30px;
+    }
+    
     @media screen and (max-width: 1200px) {
 
     }
@@ -74,61 +95,32 @@ body {
     }
   }
 
-// BANNER SECTION
-
-#home{
-  height: 100vh;
-  background-image: url('./../images/bg-main.jpg');
-	background-repeat: no-repeat;
-	background-size: cover;
-  margin: 0;
-}
-.main-banner{
-  @include d-flex();
-  padding-top: 100px;
-  
-  
-  &__text{
-    width: 50%;
-    position: relative;
+.input-wrapper{
+  @include border-radius();
+  position: relative; 
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  padding: 14px 30px;
+  span{
+    @include position(10px, inherit, inherit 20px);
+    display: block;
+    font: 500 0.9375rem/1.2 $f-main;
+    color: rgba(255, 255, 255, 0.2);
   }
-
-  &__image{
-    width: 50%;
-    position: relative;
-  }
-  &__title{
-    margin-bottom: 40px;
-  }
-  &__content{
-    max-width: 470px;
+  input{
+    font: 400 1.5625rem/1.2 $f-main;    
+    color: rgba(255, 255, 255, 0.4);
+    background: transparent;
     width: 100%;
-    margin-bottom: 33px;
   }
   @media screen and (max-width: 767px){
-    flex-direction: column;
-    padding-bottom: 0;
+    padding: 11px 18px;
+    span{
+      font-size: 0.6875rem;
+      line-height: 1.18;
+    }
+    input{
+      font-size: 0.875rem;
+      line-height: 1.14;
+    }
   }
 }
-
-// marquee SECTION
-
-.marquee {
-  display: block;
-  width: 100%;
-  white-space: nowrap;
-  overflow: hidden;
-  background: #5A4039;
-  transform: matrix(1, 0, 0, -1, 0, 0);
-  padding: 10px 0;
-  span {
-    display: inline-block;
-    text-transform: uppercase;
-    padding-left: 100%;
-    color: rgba(255, 245, 0, 0.6);
-    -webkit-animation: scroll 5s infinite linear;
-    -moz-animation: scroll 5s infinite linear;
-    animation: scroll 5s infinite linear;
-  }
-}
-

@@ -2,28 +2,65 @@ header{
     position: relative;
 }
 .header{
-    position: fixed;
-    left: 0;
-    top: 0;
-    right: 0;
+    @include d-flex(center, space-between);
+    @include position(fixed, 0, 0, inherit, 0);
+    z-index: 9999;
     max-width: 1736px;
     width: 100%;
     margin: 0 auto;
-    @include d-flex(center, space-between);
     padding: 42px 0 40px;
     font-size: 14px;
+    &.active{
+        align-items: flex-start;
+        bottom: 0;
+        background-color: #384D70
+    }
     &-logo{
-        min-width: 100px
+        min-width: 250px;
+    }
+    @media screen and (max-width: 1750px){
+        max-width: calc(100% - 80px);
+    }
+    @media screen and (max-width: 767px){
+        max-width: 100%;
+        padding-top: 17px;
+        &-logo{
+            padding-left: 15px;
+            min-width: 150px;
+            max-width: 150px
+        }
+        &-menu{
+            padding-right: 15px
+        }
     }
 }
 
 .menu{
     @include d-flex();
+    &.active{
+        @include position(absolute, 80px, 15px, inherit, 15px);
+        display: block;
+        ul{
+            flex-direction: column;
+            align-items: flex-start;
+            li{
+                font: 600 1.25rem/1.15 $f-main;
+                font-weight: 600;
+                color: #FFFFFF;
+                opacity: 0.8;
+                margin: 20px 0px;
+            }
+        } 
+        .btn{
+            max-width: 350px;
+            min-width: 100%;
+            margin: 40px auto 0;
+        }
+    }
     ul{
         @include d-flex(center, inherit);
         li{
             font: 600 1rem/1.25 $f-main;
-            letter-spacing: 0.01em;
             margin: 0 12px;
             border-bottom: 2px solid transparent;
             transition: all 1s ease-in;
@@ -36,21 +73,32 @@ header{
             }
         }
     }
-    @media screen and (max-width: 991px){
+    
+    @media screen and (max-width: 1600px){
         display: none;
     }
 }
 
 .mobile-menu{
+    @include border-radius();
     display: none;
+    background-color: #384D70;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 40px;
+    height: 40px;
     span{
         display: block;
         height: 2px;
-        background: #21395F;
-        width: 28px;
+        background: #fff;
+        width: 17px;
         margin-bottom: 5px;
     }
-    @media screen and (max-width: 991px){
-        display: block;
+    &.active{
+        background-color: transparent;
+    }
+    @media screen and (max-width: 1600px){
+        display: flex;
     }
 }
