@@ -15,10 +15,14 @@ $bg-main:         #101932;
 $c-main-button:   #E11D2E;
 
 
-$col1: #84ffc9;
-$col2: #f6d5f7;
-$col-bg: #fff;
-$col-txt: #0a0a0a; 
+// Transition mixin
+@mixin global-transition {
+  transition: 0.125s ease-in-out, background-color 0.2s ease-out, color 0.1s ease-out, border 0.1s ease-out;
+}
+
+// Color variables
+$color-grey: #bdc3c7;
+$color-green: #2ecc71;
 
 
 
