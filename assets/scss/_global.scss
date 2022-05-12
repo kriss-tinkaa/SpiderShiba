@@ -37,21 +37,6 @@ body {
     }
   }
 
-.container{
-    max-width: 1736px;
-    width: 100%;
-    margin: 0 auto;
-    &--sm{
-      max-width: 980px;
-    }
-    @media screen and (max-width: 1750px){
-      max-width: calc(100% - 80px);
-    }
-    @media screen and (max-width: 767px){
-      max-width: calc(100% - 30px);
-    }
-}
-
   a{
     color: $c-main;
     &:hover{
@@ -60,67 +45,86 @@ body {
     }
   }
 
-.btn {
-    @include d-flex(center, center);
-    @include border-radius(xs);
-    font: 700 1.25rem/1.25  $f-main;
-    border: 1px solid transparent;
-    padding: 25px 45px;
-    color: #FFFFFF;
-    &:hover{
-      cursor: pointer;
-      border-color: #FFFFFF;
-      background: rgba(255, 255, 255, 0.05);
-    }
-    &--main{
-      background: $c-main-button;
-    }
-    &--transparent{
-      background: rgba(255, 255, 255, 0.05);
+  .container{
+      max-width: 1736px;
+      width: 100%;
+      margin: 0 auto;
+      &--sm{
+        max-width: 980px;
+      }
+      @media screen and (max-width: 1750px){
+        max-width: calc(100% - 80px);
+      }
+      @media screen and (max-width: 767px){
+        max-width: calc(100% - 30px);
+      }
+  }
+
+  .btn {
+      @include d-flex(center, center);
+      @include border-radius(xs);
+      font: 700 1.25rem/1.25  $f-main;
+      border: 1px solid transparent;
+      padding: 25px 45px;
+      color: #FFFFFF;
       &:hover{
+        cursor: pointer;
         border-color: #FFFFFF;
+        background: rgba(255, 255, 255, 0.05);
+      }
+      &--main{
+        background: $c-main-button;
+      }
+      &--transparent{
+        background: rgba(255, 255, 255, 0.05);
+        &:hover{
+          border-color: #FFFFFF;
+        }
+      }
+      &--header{
+        background: #AC1216;
+        padding: 11px 30px;
+      }
+      
+      @media screen and (max-width: 1200px) {
+
+      }
+      @media screen and (max-width: 1024px) {
+        //padding: 7px 10px;
+        min-width: 160px;
       }
     }
-    &--header{
-      background: #AC1216;
-      padding: 11px 30px;
-    }
-    
-    @media screen and (max-width: 1200px) {
 
-    }
-    @media screen and (max-width: 1024px) {
-      //padding: 7px 10px;
-      min-width: 160px;
-    }
-  }
-
-.input-wrapper{
-  @include border-radius();
-  position: relative; 
-  border: 1px solid rgba(255, 255, 255, 0.09);
-  padding: 14px 30px;
-  span{
-    @include position(10px, inherit, inherit 20px);
-    display: block;
-    font: 500 0.9375rem/1.2 $f-main;
-    color: rgba(255, 255, 255, 0.2);
-  }
-  input{
-    font: 400 1.5625rem/1.2 $f-main;    
-    color: rgba(255, 255, 255, 0.4);
-    background: transparent;
-    width: 100%;
-  }
-  @media screen and (max-width: 767px){
-    padding: 11px 18px;
+  .input-wrapper{
+    @include border-radius();
+    position: relative; 
+    border: 1px solid rgba(255, 255, 255, 0.09);
+    padding: 14px 30px;
     span{
-      font-size: 0.6875rem;
-      line-height: 1.18;
+      @include position(10px, inherit, inherit 20px);
+      display: block;
+      font: 500 0.9375rem/1.2 $f-main;
+      color: rgba(255, 255, 255, 0.2);
     }
     input{
-      font-size: 0.875rem;
-      line-height: 1.14;
+      font: 400 1.5625rem/1.2 $f-main;    
+      color: rgba(255, 255, 255, 0.4);
+      background: transparent;
+      width: 100%;
+    }
+    @media screen and (max-width: 767px){
+      padding: 11px 18px;
+      span{
+        font-size: 0.6875rem;
+        line-height: 1.18;
+      }
+      input{
+        font-size: 0.875rem;
+        line-height: 1.14;
+      }
     }
   }
-}
+
+  .bg-blue{
+    background: #30298C;
+  }
